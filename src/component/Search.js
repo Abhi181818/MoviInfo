@@ -18,11 +18,11 @@ export default function Search() {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4Njg2NzFjNjE2MWQzYjJjOWJmNzgxMDI4YTRmYzMxYyIsInN1YiI6IjY0ZjcyZjg1NWYyYjhkMDBlMTJkNGRjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6ZJRKj-_97UIkNC8twzXXYMS02mWlbVNqvU4s55ozZs'
+                Authorization: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4Njg2NzFjNjE2MWQzYjJjOWJmNzgxMDI4YTRmYzMxYyIsInN1YiI6IjY0ZjcyZjg1NWYyYjhkMDBlMTJkNGRjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6ZJRKj-_97UIkNC8twzXXYMS02mWlbVNqvU4s55ozZs'
             }
         };
 
-        let data = await fetch(`https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=1`, options)
+        let data = await fetch(`https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=true&language=en-US&page=1`, options)
         let response = await data.json()
         setResults(response.results)
         setTotalResult(response.total_results)
